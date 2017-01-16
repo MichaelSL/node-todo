@@ -1,7 +1,7 @@
-require.config({
-    baseUrl: 'js',
+System.config({
+    baseURL: '/js',
     paths: {
-        'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min'
+        'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js'
     },
     shim: {
         angular: {
@@ -10,7 +10,7 @@ require.config({
     }
 });
 
-require(['angular', 'controllers/main', 'services/todos'], function(angular) {
+require(['angular', 'controllers/main.js', 'services/todos.js'], function(angular) {
     'use strict';
     angular.module('scotchTodo', ['todoController', 'todoService']);    
 });

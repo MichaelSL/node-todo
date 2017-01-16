@@ -20,6 +20,12 @@
 	</style>
 
 	<script type="text/javascript" data-main="js/core.js" src="jslibs/require.js"></script>
+	<script type="text/javascript" src="jslibs/system.js"></script>
+
+	<script>
+		window.define = SystemJS.amdDefine;
+		window.require = window.requirejs = SystemJS.amdRequire;
+	</script>
 
 </head>
 <!-- SET THE CONTROLLER -->
