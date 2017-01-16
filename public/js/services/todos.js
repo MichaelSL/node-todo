@@ -1,5 +1,6 @@
-angular.module('todoService', [])
-
+define(['angular'], function(angular) {
+	'use strict';
+	angular.module('todoService', [])
 	// super simple service
 	// each function returns a promise object 
 	.factory('Todos', ['$http',function($http) {
@@ -15,3 +16,4 @@ angular.module('todoService', [])
 			}
 		}
 	}]);
+});

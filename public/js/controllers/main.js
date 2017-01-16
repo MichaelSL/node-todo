@@ -1,4 +1,6 @@
-angular.module('todoController', [])
+define(['angular'], function(angular) {
+	'use strict';
+	angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
@@ -48,3 +50,4 @@ angular.module('todoController', [])
 				});
 		};
 	}]);
+});
