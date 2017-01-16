@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchTodo">
+<html>
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -22,9 +22,29 @@
 	<script type="text/javascript" data-main="js/core.js" src="jslibs/require.js"></script>
 	<script type="text/javascript" src="jslibs/system.js"></script>
 
-	<script>
+	<script type="text/javascript">
 		window.define = SystemJS.amdDefine;
 		window.require = window.requirejs = SystemJS.amdRequire;
+
+		System.config({
+			packages: {
+				js:{
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			},
+			paths: {
+				'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js'
+			},
+			shim: {
+				angular: {
+					exports: 'angular'
+				}
+			}
+		});
+
+		System.import('js/boot.js')
+			.catch(console.error.bind(console));
 	</script>
 
 </head>
