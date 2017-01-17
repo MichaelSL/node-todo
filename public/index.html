@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
-<html>
+<html ng-app="scotchTodo">
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -19,32 +19,85 @@
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
 
-	<script type="text/javascript" data-main="js/core.js" src="jslibs/require.js"></script>
+	<!--<script src="jslibs/es6-shim/es6-shim.js"></script>
+	<script src="jslibs/reflect-metadata/Reflect.js"></script>-->
+	<script type="text/javascript" src="jslibs/require.js"></script>
 	<script type="text/javascript" src="jslibs/system.js"></script>
 
 	<script type="text/javascript">
 		window.define = SystemJS.amdDefine;
 		window.require = window.requirejs = SystemJS.amdRequire;
 
-		System.config({
-			packages: {
-				js:{
-					format: 'register',
-					defaultExtension: 'js'
-				}
+		let packages = {
+			// js:{
+			// 	format: 'register',
+			// 	defaultExtension: 'js'
+			// },
+			js:{
+				defaultExtension: 'js'
 			},
+			jslibs: {
+				defaultExtension: 'js'
+			}
+		};
+
+		var ngPackageNames = [
+			"common",
+			"compiler",
+			"core",
+			"http",
+			"platform-browser",
+			"platform-browser-dynamic",
+			"router",
+			"upgrade"
+		];
+
+		ngPackageNames.forEach(
+			function iterator( packageName ) {
+
+				packages[ "@angular/" + packageName ] = {
+					main: '/bundles/' + packageName + '.umd.js'
+					// ,
+					// defaultExtension: "js"
+				};
+
+			}
+		);
+
+		System.config({
+			packages: packages,
 			paths: {
-				'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js'
+				'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js',
+				'Zone': 'jslibs/zone.js/dist/zone.js',
+				'reflect-metadata': 'jslibs/reflect-metadata/Reflect.js',
+				'rxjs': 'jslibs/rxjs/rx.js'
+			},
+			map: {
+				'@angular': 'jslibs/@angular',
+				'rxjs': 'jslibs/rxjs'
 			},
 			shim: {
 				angular: {
 					exports: 'angular'
+				},
+				'Zone': {
+					exports: 'Zone'
+				},
+				'reflect-metadata':{
+					exports: 'reflect-metadata'
+				},
+				'rxjs': {
+					exports: 'rxjs'
 				}
 			}
 		});
 
-		System.import('js/boot.js')
-			.catch(console.error.bind(console));
+		// System.import('angular')
+		// 	.then(function(ng) { 
+		// 		return System.import('js/core.js');
+		// 	})
+		// 	.catch(console.error.bind(console));
+		System.import('js/boot.js');
 	</script>
 
 </head>

@@ -5,38 +5,40 @@
   "main": "server.js",
   "author": "Scotch",
   "scripts": {
-    "start": "concurrently \"npm run tsc:w\" \"node server.js\" ",    
+    "start": "concurrently \"npm run tsc:w\" \"node server.js\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install" 
+    "postinstall": "typings install"
   },
   "dependencies": {
+    "@angular/common": "2.4.3",
+    "@angular/compiler": "2.4.3",
+    "@angular/core": "2.4.3",
+    "@angular/platform-browser": "2.4.3",
+    "@angular/platform-browser-dynamic": "2.4.3",
+    "@angular/upgrade": "2.4.3",
+    "app-root-path": "^2.0.1",
     "body-parser": "^1.4.3",
+    "es6-promise": "4.0.5",
+    "es6-shim": "0.35.2",
     "express": "^4.13.4",
     "method-override": "^2.1.3",
     "mongoose": "^4.4.12",
     "morgan": "^1.1.1",
-    "requirejs": "2.3.2",
-    "systemjs": "0.19.41",
-    "@angular/core": "2.4.3",
-    "@angular/upgrade": "2.4.3",
-    "@angular/compiler": "2.4.3",
-    "@angular/platform-browser": "2.4.3",
-    "@angular/platform-browser-dynamic": "2.4.3",
-    "@angular/common": "2.4.3",
-    "es6-promise": "4.0.5",
-    "es6-shim": "0.35.2",
     "reflect-metadata": "0.1.9",
+    "requirejs": "2.3.2",
     "rxjs": "5.0.3",
-    "zone.js": "0.7.5" 
+    "systemjs": "0.19.41",
+    "zone.js": "0.7.5"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
     "concurrently": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "lite-server": "^2.1.0",
     "typescript": "^1.8.2",
-    "typings":"^0.6.8"
+    "typings": "^0.6.8"
   }
 }
