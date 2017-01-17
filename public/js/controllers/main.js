@@ -11,8 +11,8 @@ define(['angular'], function(angular) {
 		// when landing on the page, get all todos and show them
 		// use the service to get all the todos
 		Todos.get()
-			.success(function(data) {
-				$scope.todos = data;
+			.then(function(data) {
+				$scope.todos = data.data;
 				$scope.loading = false;
 			});
 
@@ -29,10 +29,10 @@ define(['angular'], function(angular) {
 				Todos.create($scope.formData)
 
 					// if successful creation, call our get function to get all the new todos
-					.success(function(data) {
+					.then(function(data) {
 						$scope.loading = false;
 						$scope.formData = {}; // clear the form so our user is ready to enter another
-						$scope.todos = data; // assign our new list of todos
+						$scope.todos = data.data; // assign our new list of todos
 					});
 			}
 		};
@@ -44,9 +44,9 @@ define(['angular'], function(angular) {
 
 			Todos.delete(id)
 				// if successful creation, call our get function to get all the new todos
-				.success(function(data) {
+				.then(function(data) {
 					$scope.loading = false;
-					$scope.todos = data; // assign our new list of todos
+					$scope.todos = data.data; // assign our new list of todos
 				});
 		};
 	}]);

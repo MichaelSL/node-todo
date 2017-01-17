@@ -1,7 +1,7 @@
 <!doctype html>
 
-<!-- ASSIGN OUR ANGULAR MODULE -->
-<html ng-app="scotchTodo">
+<!-- ASSIGN OUR ANGULAR MODULE ng-app="scotchTodo" -->
+<html>
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -67,7 +67,7 @@
 		System.config({
 			packages: packages,
 			paths: {
-				'angular': '//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js',
+				'angular': 'jslibs/angular/angular.min.js',
 				'Zone': 'jslibs/zone.js/dist/zone.js',
 				'reflect-metadata': 'jslibs/reflect-metadata/Reflect.js',
 				'rxjs': 'jslibs/rxjs/rx.js'
@@ -77,7 +77,7 @@
 				'rxjs': 'jslibs/rxjs'
 			},
 			shim: {
-				angular: {
+				'angular': {
 					exports: 'angular'
 				},
 				'Zone': {
@@ -92,12 +92,11 @@
 			}
 		});
 
-		// System.import('angular')
-		// 	.then(function(ng) { 
-		// 		return System.import('js/core.js');
-		// 	})
-		// 	.catch(console.error.bind(console));
-		System.import('js/boot.js');
+		System.import('angular')
+			.then(function(ng){
+				return System.import('js/boot.js');
+			})
+			.catch(console.error.bind(console));
 	</script>
 
 </head>

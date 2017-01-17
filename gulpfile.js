@@ -36,4 +36,9 @@ gulp.task('copy-es6-shim', ['clean-libs'], function(){
         .pipe(gulp.dest('public/jslibs/es6-shim'));
 });
 
-gulp.task('default', ['copy-frontend-libs', 'copy-angular2', 'copy-rxjs', 'copy-reflect-metadata', 'copy-zone', 'copy-es6-shim']);
+gulp.task('copy-angular', ['clean-libs'], function(){
+    return gulp.src(['node_modules/angular/**/*'])
+        .pipe(gulp.dest('public/jslibs/angular'));
+});
+
+gulp.task('default', ['copy-frontend-libs', 'copy-angular2', 'copy-rxjs', 'copy-reflect-metadata', 'copy-zone', 'copy-es6-shim','copy-angular']);
