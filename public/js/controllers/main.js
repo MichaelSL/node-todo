@@ -3,7 +3,7 @@ define(['angular'], function(angular) {
 	angular.module('todoController', [])
 
 	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
+	.controller('mainController', ['$scope','$http','Todos', 'timeZones', function($scope, $http, Todos, timeZones) {
 		$scope.formData = {};
 		$scope.loading = true;
 
@@ -49,5 +49,7 @@ define(['angular'], function(angular) {
 					$scope.todos = data.data; // assign our new list of todos
 				});
 		};
+
+		$scope.citiesList = timeZones.getCities();
 	}]);
 });

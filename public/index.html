@@ -64,6 +64,10 @@
 			}
 		);
 
+		packages[ "@angular/upgrade/static" ] = {
+					main: '../bundles/upgrade-static.umd.js'
+				};
+
 		System.config({
 			packages: packages,
 			paths: {
@@ -146,6 +150,10 @@
 		</div>
 
 		<hello-angular2></hello-angular2>
+
+		<ul>
+			<li ng-repeat="city in citiesList">{{city.name}} = {{city.zone}}</li>
+		</ul>
 
 		<div class="text-center text-muted">
 			<p>A demo by <a href="http://scotch.io">Scotch</a>.</p>
