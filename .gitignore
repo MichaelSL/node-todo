@@ -18,3 +18,7 @@ typings/**
 .vscode/**
 public/js/boot.js
 public/js/boot.js.map
+public/js/components/hello-angular2.js
+public/js/components/hello-angular2.js.map
+public/js/services/timezones.js
+public/js/services/timezones.js.map

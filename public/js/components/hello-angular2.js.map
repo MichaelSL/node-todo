@@ -1,1 +1,0 @@
-{"version":3,"file":"hello-angular2.js","sourceRoot":"","sources":["hello-angular2.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAMA;gBAGI;oBACI,IAAI,CAAC,QAAQ,GAAG,sBAAsB,CAAA;gBAC1C,CAAC;gBATL;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,gBAAgB;wBAC1B,QAAQ,EAAE,uBAAuB;qBACpC,CAAC;;iCAAA;gBAOF,oBAAC;YAAD,CAAC,AAND,IAMC;YAND,yCAMC,CAAA"}
