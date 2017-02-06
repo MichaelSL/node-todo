@@ -16,3 +16,5 @@ node_modules
 public/jslibs/**
 typings/**
 .vscode/**
+public/js/boot.js
+public/js/boot.js.map

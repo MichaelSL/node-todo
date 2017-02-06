@@ -8,7 +8,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { UpgradeModule } from '@angular/upgrade/static';
 import 'Zone';
 //import 'js/core.js';
-import 'angular';
+import * as angular from 'angular';
 import 'js/controllers/main.js';
 import 'js/services/todos.js';
 
