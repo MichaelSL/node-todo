@@ -26,81 +26,7 @@
 
 	<script type="text/javascript">
 		window.define = SystemJS.amdDefine;
-		window.require = window.requirejs = SystemJS.amdRequire;
-
-		let packages = {
-			// js:{
-			// 	format: 'register',
-			// 	defaultExtension: 'js'
-			// },
-			js:{
-				defaultExtension: 'js'
-			},
-			jslibs: {
-				defaultExtension: 'js'
-			}
-		};
-
-		var ngPackageNames = [
-			"common",
-			"compiler",
-			"core",
-			"http",
-			"platform-browser",
-			"platform-browser-dynamic",
-			"router",
-			"upgrade"
-		];
-
-		ngPackageNames.forEach(
-			function iterator( packageName ) {
-
-				packages[ "@angular/" + packageName ] = {
-					main: '/bundles/' + packageName + '.umd.js'
-					// ,
-					// defaultExtension: "js"
-				};
-
-			}
-		);
-
-		packages[ "@angular/upgrade/static" ] = {
-					main: '../bundles/upgrade-static.umd.js'
-				};
-
-		System.config({
-			packages: packages,
-			paths: {
-				'angular': 'jslibs/angular/angular.min.js',
-				'Zone': 'jslibs/zone.js/dist/zone.js',
-				'reflect-metadata': 'jslibs/reflect-metadata/Reflect.js',
-				'rxjs': 'jslibs/rxjs/rx.js'
-			},
-			map: {
-				'@angular': 'jslibs/@angular',
-				'rxjs': 'jslibs/rxjs'
-			},
-			shim: {
-				'angular': {
-					exports: 'angular'
-				},
-				'Zone': {
-					exports: 'Zone'
-				},
-				'reflect-metadata':{
-					exports: 'reflect-metadata'
-				},
-				'rxjs': {
-					exports: 'rxjs'
-				}
-			}
-		});
-
-		System.import('angular')
-			.then(function(ng){
-				return System.import('js/boot.js');
-			})
-			.catch(console.error.bind(console));
+		window.require = window.requirejs = SystemJS.amdRequire;		
 	</script>
 
 </head>
@@ -161,6 +87,7 @@
 		</div>
 
 	</div>
-
+	<script src="system.config.js"></script>
+	<script src="system.import.js"></script>
 </body>
 </html>
