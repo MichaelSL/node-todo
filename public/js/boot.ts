@@ -1,13 +1,12 @@
 import 'reflect-metadata';
+import {NgModule, Component} from '@angular/core';
 import { downgradeInjectable, downgradeComponent } from '@angular/upgrade/static';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
 import {HelloAngular2} from './components/hello-angular2';
 import {TimeZonesService} from './services/timezones';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { UpgradeModule } from '@angular/upgrade/static';
 import 'Zone';
-//import 'js/core.js';
 import * as angular from 'angular';
 import 'js/controllers/main.js';
 import 'js/services/todos.js';

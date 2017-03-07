@@ -7,7 +7,7 @@ gulp.task('clean-libs', function(){
 });
 
 gulp.task('copy-frontend-libs', ['clean-libs'], function(){
-    return gulp.src(['node_modules/requirejs/require.js', 'node_modules/systemjs/dist/system.js'])
+    return gulp.src(['node_modules/requirejs/require.js', 'node_modules/systemjs/dist/system.js', 'node_modules/systemjs/dist/system.js.map'])
         .pipe(gulp.dest('public/jslibs'));
 });
 

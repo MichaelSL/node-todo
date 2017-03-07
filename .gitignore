@@ -22,3 +22,5 @@ public/js/components/hello-angular2.js
 public/js/components/hello-angular2.js.map
 public/js/services/timezones.js
 public/js/services/timezones.js.map
+public/dist/
+public/**/*.js.map
